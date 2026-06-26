@@ -1,17 +1,18 @@
 # Design System Foundations
 
-Codex skill and reference package for applying Omio Dotty design-system foundations.
+Codex and Claude Code skill and reference package for applying Omio Dotty design-system foundations.
 
 This repository helps AI agents, engineers, and designers use the same foundation contract when working with color, typography, spacing, radius, border, elevation, icons, motion, content, and layout.
 
 ## What This Is
 
-This repo is a Codex skill. It is not a Figma plugin, Adobe plugin, component library, or token pipeline by itself.
+This repo is a Codex and Claude Code skill. It is not a Figma plugin, Adobe plugin, component library, or token pipeline by itself.
 
 It contains:
 
-- `SKILL.md` - the runtime skill instructions Codex loads.
-- `agents/openai.yaml` - UI metadata for the skill.
+- `SKILL.md` - the runtime skill instructions Codex and Claude Code load. Shared by both agents; keep its frontmatter to `name` and `description` only.
+- `agents/openai.yaml` - Codex UI metadata for the skill.
+- `agents/claude.yaml` - Claude Code UI metadata for the skill (parity record; Claude Code reads `SKILL.md` frontmatter at runtime).
 - `references/` - Dotty foundation docs, token JSON, Figma export data, and font metadata.
 
 It intentionally does not include licensed GT Walsheim Pro font binaries. Use your private Omio font source when accurate typography rendering is required.
@@ -45,6 +46,46 @@ Use $design-system-foundations to QA this Figma frame for foundation-token mista
 ```text
 Use $design-system-foundations to generate CSS variables from the Dotty foundation token manifest.
 ```
+
+## Install For Claude Code
+
+Claude Code discovers skills from a `skills/` directory. Clone this repo as a skill.
+
+Personal (available in every session, just you):
+
+```sh
+mkdir -p "$HOME/.claude/skills"
+git clone git@github.com:omio-ui-platform/design-system-foundations.git \
+  "$HOME/.claude/skills/design-system-foundations"
+```
+
+Project (committed to a repo so the whole team gets it):
+
+```sh
+mkdir -p .claude/skills
+git clone git@github.com:omio-ui-platform/design-system-foundations.git \
+  .claude/skills/design-system-foundations
+```
+
+Claude Code loads `SKILL.md` automatically from its `name`/`description` frontmatter. Invoke it with the slash command, or just describe the task and let it auto-activate:
+
+```text
+/design-system-foundations review this checkout screen against Dotty foundations.
+```
+
+```text
+Use the design-system-foundations skill to map this UI spec to Dotty color, typography, spacing, radius, border, and elevation tokens.
+```
+
+```text
+Use the design-system-foundations skill to QA this Figma frame for foundation-token mistakes and source-spec gaps.
+```
+
+```text
+Use the design-system-foundations skill to generate CSS variables from the Dotty foundation token manifest.
+```
+
+`SKILL.md` and the `references/` package are shared verbatim with the Codex skill — there is no Claude-specific fork of the foundation contract.
 
 ## Lovable Integration
 
@@ -236,9 +277,10 @@ python3 /path/to/skill-creator/scripts/quick_validate.py .
 
 If `quick_validate.py` cannot run because `PyYAML` is unavailable, validate manually that:
 
-- `SKILL.md` has only `name` and `description` in YAML frontmatter.
+- `SKILL.md` has only `name` and `description` in YAML frontmatter (both Codex and Claude Code accept this; extra frontmatter breaks the Codex loader).
 - `name` is `design-system-foundations`.
 - `agents/openai.yaml` still points to `$design-system-foundations`.
+- `agents/claude.yaml` still references the `design-system-foundations` skill.
 - No `.otf`, `.ttf`, `.woff`, or `.woff2` files are included.
 
 ## Public Repo Safety
