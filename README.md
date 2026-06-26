@@ -51,7 +51,7 @@ Use $design-system-foundations to generate CSS variables from the Dotty foundati
 
 Claude Code discovers skills from a `skills/` directory. Clone this repo as a skill.
 
-Personal (available in every session, just you):
+Personal (available in every session, just you). `~/.claude/skills` is not inside another repo, so a plain clone is fine:
 
 ```sh
 mkdir -p "$HOME/.claude/skills"
@@ -59,13 +59,33 @@ git clone git@github.com:omio-ui-platform/design-system-foundations.git \
   "$HOME/.claude/skills/design-system-foundations"
 ```
 
-Project (committed to a repo so the whole team gets it):
+Project (committed to a repo so the whole team gets it). Do **not** `git clone` straight into `.claude/skills/` and commit it — a nested `.git` becomes an embedded gitlink with no `.gitmodules`, so a normal clone of the parent repo gives teammates an empty directory. Use one of:
 
-```sh
-mkdir -p .claude/skills
-git clone git@github.com:omio-ui-platform/design-system-foundations.git \
-  .claude/skills/design-system-foundations
-```
+- **Submodule** — stays linked to this repo for updates:
+
+  ```sh
+  git submodule add git@github.com:omio-ui-platform/design-system-foundations.git \
+    .claude/skills/design-system-foundations
+  git commit -m "chore: add design-system-foundations skill (submodule)"
+  ```
+
+  Teammates then fetch the files with:
+
+  ```sh
+  git submodule update --init --recursive
+  ```
+
+  Update to the latest skill version later with `git submodule update --remote .claude/skills/design-system-foundations`.
+
+- **Vendor / copy** — simplest for consumers (a normal clone just works); re-sync manually when the skill changes:
+
+  ```sh
+  git clone --depth 1 git@github.com:omio-ui-platform/design-system-foundations.git /tmp/dsf
+  mkdir -p .claude/skills/design-system-foundations
+  rsync -a --exclude '.git' /tmp/dsf/ .claude/skills/design-system-foundations/
+  git add .claude/skills/design-system-foundations
+  git commit -m "chore: vendor design-system-foundations skill"
+  ```
 
 Claude Code loads `SKILL.md` automatically from its `name`/`description` frontmatter. Invoke it with the slash command, or just describe the task and let it auto-activate:
 
