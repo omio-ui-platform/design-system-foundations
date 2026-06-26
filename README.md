@@ -4,6 +4,21 @@ Codex and Claude Code skill and reference package for applying Omio Dotty design
 
 This repository helps AI agents, engineers, and designers use the same foundation contract when working with color, typography, spacing, radius, border, elevation, icons, motion, content, and layout.
 
+**Outline**
+
+- [Design System Foundations](#design-system-foundations)
+- [What This Is](#what-this-is)
+- [Install For Codex](#install-for-codex)
+- [Install For Claude Code](#install-for-claude-code)
+- [Lovable Integration](#lovable-integration)
+- [Use The References Directly](#use-the-references-directly)
+- [Figma Integration](#figma-integration)
+- [Photoshop Integration](#photoshop-integration)
+- [Illustrator Integration](#illustrator-integration)
+- [Other Common Designer Tools](#other-common-designer-tools)
+- [Updating The Skill](#updating-the-skill)
+- [Public Repo Safety](#public-repo-safety)
+
 ## What This Is
 
 This repo is a Codex and Claude Code skill. It is not a Figma plugin, Adobe plugin, component library, or token pipeline by itself.
@@ -106,6 +121,14 @@ Use the design-system-foundations skill to generate CSS variables from the Dotty
 ```
 
 `SKILL.md` and the `references/` package are shared verbatim with the Codex skill — there is no Claude-specific fork of the foundation contract.
+
+Verify the install by checking the skill file exists:
+
+```sh
+test -f "$HOME/.claude/skills/design-system-foundations/SKILL.md"
+```
+
+Then start a new Claude Code session and run one of the prompts above. For project installs, use the same check against `.claude/skills/design-system-foundations/SKILL.md` from the project root.
 
 ## Lovable Integration
 
