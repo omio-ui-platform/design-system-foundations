@@ -1,0 +1,10 @@
+# Claude Code UI metadata for this skill, kept in parity with agents/openai.yaml.
+#
+# Claude Code activates the skill from SKILL.md's `name`/`description` frontmatter
+# at runtime (auto-invocation, or the `/design-system-foundations` slash command).
+# It does not read this file; it documents the same interface so both agents stay
+# in sync. See README "Install For Claude Code".
+interface:
+  display_name: "Design System Foundations"
+  short_description: "Apply Dotty foundation tokens and rules"
+  default_prompt: "Use the design-system-foundations skill to apply Dotty foundation tokens and rules to this UI."
