@@ -46,6 +46,95 @@ Use $design-system-foundations to QA this Figma frame for foundation-token mista
 Use $design-system-foundations to generate CSS variables from the Dotty foundation token manifest.
 ```
 
+## Lovable Integration
+
+Lovable can use this repository in three practical ways:
+
+1. Import it as a workspace skill for on-demand Dotty foundation work.
+2. Add a short Dotty summary to workspace or project knowledge for always-on guardrails.
+3. Reference the token data when building a Lovable Enterprise design system project.
+
+Relevant Lovable docs:
+
+- [Skills](https://docs.lovable.dev/features/skills)
+- [Knowledge](https://docs.lovable.dev/features/knowledge)
+- [Design systems](https://docs.lovable.dev/features/design-systems)
+- [GitHub integration](https://docs.lovable.dev/integrations/github)
+
+### Import as a Lovable Skill
+
+Use this when Lovable should apply Dotty foundations only for design-system tasks.
+
+1. In Lovable, open `Settings` -> `Skills`.
+2. Choose `Add` -> `Import from GitHub`.
+3. Paste this repository URL:
+
+   ```text
+   https://github.com/omio-ui-platform/design-system-foundations
+   ```
+
+4. Confirm the imported skill name is `design-system-foundations`.
+5. Keep automatic use enabled if every Dotty-related request in the workspace should trigger it. Disable automatic use if teams should invoke it manually.
+
+Manual invocation examples:
+
+```text
+/design-system-foundations Review this dashboard for Dotty token, spacing, typography, and color mistakes.
+```
+
+```text
+/design-system-foundations Rework this Lovable page to use Dotty foundations without inventing component behavior.
+```
+
+```text
+/design-system-foundations Create a QA checklist for this generated page before I publish it.
+```
+
+### Add Always-On Lovable Knowledge
+
+Use knowledge for rules that should apply to every Lovable prompt, even when the full skill is not loaded.
+
+Recommended workspace or project knowledge snippet:
+
+```text
+Follow Omio Dotty Foundations for UI styling. Use semantic color.*, typography, space.*, radius.*, borderWidth.*, elevation.*, icon, motion, content, and layout tokens. Do not use raw hex values, primitive tokens, invented component tokens, or component behavior unless an owning component spec exists. For detailed Dotty foundation work, use the design-system-foundations skill from https://github.com/omio-ui-platform/design-system-foundations.
+```
+
+Keep knowledge short. Put detailed rules in this skill so Lovable loads the larger reference package only when the task needs it.
+
+### Use with Lovable Design Systems
+
+Use Lovable design systems when you have a React component library, installation instructions, and machine-readable schema that should flow into connected Lovable projects. This repository is foundation guidance and token data, not a complete React component library.
+
+Recommended path:
+
+1. Use `references/data/foundation-token-manifest.json` as source material for token schema.
+2. Use `references/docs-pages/*.md` as rendered rules for colors, typography, spacing, radius, border, elevation, icons, motion, content, and layout.
+3. Keep component catalog, props, variants, examples, installation, and package setup in the separate Lovable design system project.
+4. Reference this repo from that design system project's documentation or setup notes.
+
+Do not connect this repo as a full Lovable design system unless a component library and `.lovable` design-system schema are added intentionally.
+
+### Lovable Prompting Pattern
+
+Use Plan mode first for broad UI refactors:
+
+```text
+/design-system-foundations In Plan mode, audit this app for Dotty foundation violations. Group findings by color, typography, spacing, layout, and component-spec gaps. Do not edit yet.
+```
+
+Then implement small batches:
+
+```text
+/design-system-foundations Fix only the color and typography violations on /checkout. Preserve behavior and do not introduce new component variants.
+```
+
+Ask Lovable to verify:
+
+```text
+/design-system-foundations Verify the updated /checkout page against Dotty foundations and list any remaining token or source-spec gaps.
+```
+
 ## Use The References Directly
 
 Start with:
