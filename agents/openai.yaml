@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design System Foundations"
+  short_description: "Apply Dotty foundation tokens and rules"
+  default_prompt: "Use $design-system-foundations to apply Dotty foundation tokens and rules to this UI."

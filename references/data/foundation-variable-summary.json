@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "exportName": "Dotty Foundation Variables and Styles",
+  "snapshotDate": "2026-05-26",
+  "exportKind": "verified-live-summary",
+  "source": {
+    "figmaFileName": "Dotty Foundations",
+    "figmaFileKey": "WSSIyMUfJz9BsiVx5ocIL9",
+    "figmaUrl": "https://www.figma.com/design/WSSIyMUfJz9BsiVx5ocIL9/Dotty-Foundations"
+  },
+  "summary": {
+    "variableCollectionCount": 19,
+    "variableCount": 564,
+    "activeTextStyleCount": 25,
+    "effectStyleCount": 4,
+    "finalDocsBoardCount": 60,
+    "brokenAliasCount": 0
+  },
+  "collections": [
+    { "name": "00 Dimension / Primitives", "modes": ["Value"], "variableCount": 18 },
+    { "name": "01 Color / Primitives", "modes": ["Value"], "variableCount": 144 },
+    { "name": "01 Color / Theme", "modes": ["Light", "Dark"], "variableCount": 75 },
+    { "name": "01 Color / Product", "modes": ["B2C", "B2B"], "variableCount": 75 },
+    { "name": "01 Color / Semantic", "modes": ["Value"], "variableCount": 38 },
+    { "name": "01 Color / Opacity", "modes": ["Value"], "variableCount": 6 },
+    { "name": "02 Typography / Primitives", "modes": ["Value"], "variableCount": 31 },
+    { "name": "02 Typography / Semantic", "modes": ["Value"], "variableCount": 39 },
+    { "name": "02 Typography / Responsive layout", "modes": ["Desktop", "Mobile"], "variableCount": 39 },
+    { "name": "03 Spacing / Semantic", "modes": ["Value"], "variableCount": 11 },
+    { "name": "04 Radius / Semantic", "modes": ["Value"], "variableCount": 6 },
+    { "name": "05 Border / Semantic", "modes": ["Value"], "variableCount": 4 },
+    { "name": "06 Elevation / Primitives", "modes": ["Value"], "variableCount": 12 },
+    { "name": "06 Elevation / Semantic", "modes": ["Value"], "variableCount": 20 },
+    { "name": "07 Icons / Primitives", "modes": ["Value"], "variableCount": 9 },
+    { "name": "08 Motion / Primitives", "modes": ["Value"], "variableCount": 9 },
+    { "name": "08 Motion / Semantic", "modes": ["Value"], "variableCount": 9 },
+    { "name": "10 Layout / Primitives", "modes": ["Value"], "variableCount": 9 },
+    { "name": "10 Layout / Semantic", "modes": ["Value"], "variableCount": 10 }
+  ],
+  "textStyles": {
+    "activeCount": 25,
+    "families": ["display", "heading", "subheading", "body"],
+    "defaultReadableStyle": "text.body.md.regular"
+  },
+  "effectStyles": {
+    "count": 4,
+    "foundation": "06 Elevation"
+  },
+  "notes": [
+    "This file is a verified live summary created after a read-only Figma export on 2026-05-26.",
+    "A full all-foundation per-variable JSON payload was attempted through the Figma MCP but exceeded the response size and was truncated.",
+    "Use data/color-variables.figma.json for the current full color per-variable export.",
+    "Build a dedicated Figma export script or REST export job if engineering needs complete per-variable exports for every foundation collection."
+  ]
+}

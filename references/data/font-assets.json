@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "exportName": "Dotty Font Assets",
+  "snapshotDate": "2026-05-26",
+  "source": {
+    "folderName": "GT Walsheim Pro font files",
+    "driveFolderUrl": "https://drive.google.com/drive/folders/1YOgXczIRZnB0V9pdBtkvZYdMef69a6mV"
+  },
+  "licenseNote": "Omio owns the license for these font files. Use them within the approved Omio/Dotty implementation context.",
+  "fontFamily": "GT Walsheim Pro",
+  "files": [
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Regular.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 400,
+      "style": "normal",
+      "driveFileId": "1PrATV6sx4-bWqbeAGPA1JKMLzUD2a1ZD"
+    },
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Medium.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 500,
+      "style": "normal",
+      "driveFileId": "1qi3eeQKdKCqP2OtcnAA5CGtObcX9ovhQ"
+    },
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Bold.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 700,
+      "style": "normal",
+      "driveFileId": "1_mS67s2f8jJkzvHZf74Xhj5zTiYM8t5C"
+    },
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Regular-Oblique.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 400,
+      "style": "italic",
+      "driveFileId": "1YmaPyhzvqkO3dKR0vOyCGvOx9ljMJpSl"
+    },
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Medium-Oblique.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 500,
+      "style": "italic",
+      "driveFileId": "1TII3M8HHsernf2boQxl9AEnxjLsTdtWb"
+    },
+    {
+      "file": "assets/fonts/GT-Walsheim-Pro-Bold-Oblique.otf",
+      "cssFamily": "GT Walsheim Pro",
+      "weight": 700,
+      "style": "italic",
+      "driveFileId": "17NrxPToGzzo1keN0ZmskvvhkwZlO-Hvi"
+    }
+  ],
+  "implementationRule": "Load GT Walsheim Pro from assets/fonts before visual QA. Report any fallback font as a QA caveat."
+}

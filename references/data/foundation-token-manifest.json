@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "0.1.0",
+  "exportName": "Dotty Foundation Export",
+  "snapshotDate": "2026-05-26",
+  "source": {
+    "figmaFileName": "Dotty Foundations",
+    "figmaFileKey": "WSSIyMUfJz9BsiVx5ocIL9",
+    "figmaUrl": "https://www.figma.com/design/WSSIyMUfJz9BsiVx5ocIL9/Dotty-Foundations"
+  },
+  "figmaState": {
+    "variableCollectionCount": 19,
+    "variableCount": 564,
+    "activeTextStyleCount": 25,
+    "effectStyleCount": 4,
+    "brokenAliasCount": 0,
+    "finalDocsBoardCount": 60
+  },
+  "packageDocs": {
+    "agentContract": "AGENTS.md",
+    "primaryGuide": "Dotty Foundations Guide.md",
+    "readme": "README.md"
+  },
+  "assets": {
+    "fontManifest": "data/font-assets.json",
+    "fontDirectory": "assets/fonts",
+    "fontFamily": "GT Walsheim Pro"
+  },
+  "docsPageMirrors": [
+    "docs-pages/01-color.md",
+    "docs-pages/02-typography.md",
+    "docs-pages/03-spacing.md",
+    "docs-pages/04-radius.md",
+    "docs-pages/05-border.md",
+    "docs-pages/06-elevation.md",
+    "docs-pages/07-icons.md",
+    "docs-pages/08-motion.md",
+    "docs-pages/09-content.md",
+    "docs-pages/10-layout.md"
+  ],
+  "collections": [
+    {"name": "00 Dimension / Primitives", "modes": ["Value"], "variableCount": 18, "usage": "Internal numeric source scale for spacing, radius, and border width."},
+    {"name": "01 Color / Opacity", "modes": ["Value"], "variableCount": 6, "usage": "Approved opacity modifiers only when opacity is explicitly requested or designed."},
+    {"name": "01 Color / Primitives", "modes": ["Value"], "variableCount": 144, "usage": "Raw source colors. Do not use directly in product UI."},
+    {"name": "01 Color / Theme", "modes": ["Light", "Dark"], "variableCount": 75, "usage": "Light/Dark appearance routing layer."},
+    {"name": "01 Color / Product", "modes": ["B2C", "B2B"], "variableCount": 75, "usage": "Product identity mapping layer."},
+    {"name": "01 Color / Semantic", "modes": ["Value"], "variableCount": 38, "usage": "Default color layer for generated product UI."},
+    {"name": "02 Typography / Primitives", "modes": ["Value"], "variableCount": 31, "usage": "Internal typography value source."},
+    {"name": "02 Typography / Semantic", "modes": ["Value"], "variableCount": 39, "usage": "Public typography semantic token layer."},
+    {"name": "02 Typography / Responsive layout", "modes": ["Desktop", "Mobile"], "variableCount": 39, "usage": "Desktop/Mobile typography behavior layer."},
+    {"name": "03 Spacing / Semantic", "modes": ["Value"], "variableCount": 11, "usage": "Public spacing tokens for gap, padding, and layout separation."},
+    {"name": "04 Radius / Semantic", "modes": ["Value"], "variableCount": 6, "usage": "Public radius tokens for surface shape."},
+    {"name": "05 Border / Semantic", "modes": ["Value"], "variableCount": 4, "usage": "Public border-width tokens."},
+    {"name": "06 Elevation / Primitives", "modes": ["Value"], "variableCount": 12, "usage": "Internal shadow value source."},
+    {"name": "06 Elevation / Semantic", "modes": ["Value"], "variableCount": 20, "usage": "Public elevation effect token layer."},
+    {"name": "07 Icons / Primitives", "modes": ["Value"], "variableCount": 9, "usage": "Icon sizing and construction reference tokens."},
+    {"name": "08 Motion / Primitives", "modes": ["Value"], "variableCount": 9, "usage": "Internal motion timing/easing source values."},
+    {"name": "08 Motion / Semantic", "modes": ["Value"], "variableCount": 9, "usage": "Public motion duration/easing tokens."},
+    {"name": "10 Layout / Primitives", "modes": ["Value"], "variableCount": 9, "usage": "Layout reference source values."},
+    {"name": "10 Layout / Semantic", "modes": ["Value"], "variableCount": 10, "usage": "Public layout reference tokens."}
+  ],
+  "defaultProductUiTokens": {
+    "textColor": "color.text.default",
+    "pageBackground": "color.background.default",
+    "surfaceBackground": "color.background.surface",
+    "subtleBackground": "color.background.subtle",
+    "defaultIcon": "color.icon.default",
+    "subtleBorder": "color.border.subtle",
+    "defaultTextStyle": "text.body.md.regular",
+    "defaultRadius": "radius.medium",
+    "defaultBorderWidth": "borderWidth.default"
+  },
+  "allowedOpacityTokens": [
+    "opacity.8",
+    "opacity.12",
+    "opacity.16",
+    "opacity.24",
+    "opacity.40",
+    "opacity.80"
+  ],
+  "motionTokens": {
+    "duration": [
+      "motion.duration.instant",
+      "motion.duration.quick",
+      "motion.duration.standard",
+      "motion.duration.emphasized",
+      "motion.duration.expressive"
+    ],
+    "easing": [
+      "motion.easing.enter",
+      "motion.easing.exit",
+      "motion.easing.move",
+      "motion.easing.continuous"
+    ]
+  },
+  "layoutTokens": {
+    "mobile": [
+      "layout.viewport.mobile",
+      "layout.content.mobile",
+      "layout.grid.mobile.columns",
+      "layout.grid.mobile.margin",
+      "layout.grid.mobile.gutter"
+    ],
+    "desktop": [
+      "layout.viewport.desktop",
+      "layout.content.desktop",
+      "layout.grid.desktop.columns",
+      "layout.grid.desktop.margin",
+      "layout.grid.desktop.gutter"
+    ]
+  },
+  "guardrails": [
+    "Do not use primitives directly in product UI.",
+    "Do not invent raw hex, px, radius, shadow, motion, or typography values when a token exists.",
+    "Do not create component tokens during foundation validation.",
+    "Do not invent new colors, gradients, opacities, breakpoints, icons, or component-specific motion rules unless explicitly asked to extend the foundation.",
+    "Motion is an active foundation tool, not disabled; use approved motion duration and easing tokens when motion clarifies feedback, state change, loading/progress, reveal/hide, navigation continuity, or spatial relationship.",
+    "Apply motion consistently: the same intent should use the same duration, easing, direction, and reduced-motion fallback across a flow.",
+    "Component-trigger motion such as hover, press, focus, selected, or CTA animation can be suggested as a prototype assumption, but it must be labelled non-final until component specs define the behavior.",
+    "Use text.subheading.sm.medium for product UI pretitles and overlines unless a source spec requires another approved subheading weight.",
+    "Keep product UI pretitles neutral or subtle by default; do not use coral, status color, or bold pretitles unless the label has an approved meaning.",
+    "Do not repeat a generic feature label as a pretitle above every screen, panel, or card.",
+    "Choose marketing/editorial versus operational/product hierarchy before using Display scale or large spacing.",
+    "Use space.lg as the starting padding for normal product cards and panels; compact surfaces can use space.md and space.xl is for larger group separation.",
+    "Group related operational facts inside one surface before splitting every fact into a mini card.",
+    "Do not use status backgrounds to invent selected row, card, or option states.",
+    "If a prototype needs selected state before a component source spec exists, use a simple neutral structural cue and report the dependency.",
+    "Do not use coral as generic decoration, label, pretitle, status, or selected-row/card styling.",
+    "Keep Omio-branded prototype primary action emphasis on the brand role and report final action styling as a source-spec dependency.",
+    "Do not make first-level product cards border-only when elevation.surface is the clearer layer cue.",
+    "Use elevation.surface for first-level product cards or panels when they need foreground separation from color.background.default.",
+    "Keep same-level cards, panels, and sections on the same radius token unless a source spec explains the difference.",
+    "Nested surfaces should not be rounder than their parent; visibly inset children can step down one radius token, while flush children should align to the parent corner logic.",
+    "Prefer rows, dividers, spacing, or subtle background before creating nested rounded cards for related facts, metadata, rows, or comparisons.",
+    "Convert cramped tables or comparison grids into readable stacked cards or rows before text wraps into narrow fragments.",
+    "State unresolved source-spec dependencies instead of inventing foundation decisions.",
+    "Keep QA summaries and implementation notes outside user-facing UI unless explicitly requested."
+  ]
+}
