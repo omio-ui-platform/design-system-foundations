@@ -6,7 +6,6 @@ This repository helps AI agents, engineers, and designers use the same foundatio
 
 **Outline**
 
-- [Design System Foundations](#design-system-foundations)
 - [What This Is](#what-this-is)
 - [Install For Codex](#install-for-codex)
 - [Install For Claude Code](#install-for-claude-code)
